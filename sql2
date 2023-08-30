@@ -1,0 +1,18 @@
+#to set default type
+create table default_setting(name varchar(20),account_number bigint,acc_type varchar(30) default 'saving');
+Query OK, 0 rows affected (0.03 sec)
+#
+
+alter table default_setting add column pan varchar(20) default 'update';
+
+#auto increment
+mysql> alter table default_setting add column customer_id int primary key AUTO_INCREMENT ;
+
+#adding values to it
+insert into  default_setting  values('neha',1001 ,'personal','not updated' , 1);
+Query OK, 1 row affected (0.01 sec)
+
+#
+ update default_setting set name='aiza' where customer_id = 1;
+Query OK, 1 row affected (0.00 sec)
+
