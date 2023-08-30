@@ -1,0 +1,11 @@
+1.SELECT V.name, COUNT(I.u_no) AS INSTALLATION_COUNT FROM vendor V, install I WHERE V.tin_no = I.tin_no AND I.itype = 'domestic' GROUP BY V.name ORDER BY INSTALLATION_COUNT DESC LIMIT 1;
+2.SELECT V.name, COUNT(I.u_no) AS INSTALLATION_COUNT FROM vendor V, install I WHERE V.tin_no = I.tin_no AND I.itype = 'domestic' GROUP BY V.name ORDER BY INSTALLATION_COUNT DESC LIMIT 2;
+3.SELECT V.name, COUNT(I.u_no) AS INSTALLATION_COUNT FROM vendor V, install I WHERE V.tin_no = I.tin_no AND I.itype = 'domestic' GROUP BY V.name ORDER BY INSTALLATION_COUNT DESC ;
+4.SELECT U.u_adress, P.pv_type, P.capacity_of_panel FROM solar_panel P, install I, user U WHERE P.pv_no = I.pv_no AND I.u_no = U.u_no ORDER BY P.capacity_of_panel DESC LIMIT 1;
+5.SELECT U.u_adress, P.pv_type, P.capacity_of_panel FROM solar_panel P, install I, user U WHERE P.pv_no = I.pv_no AND I.u_no = U.u_no ORDER BY P.capacity_of_panel DESC LIMIT 2;
+6.SELECT U.u_adress, P.pv_type, P.capacity_of_panel FROM solar_panel P, install I, user U WHERE P.pv_no = I.pv_no AND I.u_no = U.u_no ORDER BY P.capacity_of_panel DESC;
+7.SELECT U.u_adress FROM solar_panel P, install I, user U WHERE P.PV_NO = I.PV_NO AND I.u_NO = U.u_NO AND P.pv_type = 'mono';
+8.SELECT U.u_adress, SUM(I.incharge) AS incharge FROM install I, user U WHERE I.u_no = U.u_no GROUP BY U.u_adress;
+9.SELECT V.name, P.pv_type, I.idate FROM vendor V, sold_by S, solar_panel P, install I WHERE V.tin_no = S.tin_no AND S.pv_no = P.pv_no AND P.pv_no = I.pv_no   AND I.idate = (SELECT MIN(idate) FROM install); 
+10.SELECT P.pv_type, AVG(I.incharge) AS AVERAGE_SALES FROM solar_panel P, install I WHERE P.pv_no = I.pv_no AND I.itype = 'commercial' GROUP BY P.pv_type;
+
