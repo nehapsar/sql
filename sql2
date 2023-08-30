@@ -16,3 +16,14 @@ Query OK, 1 row affected (0.01 sec)
  update default_setting set name='aiza' where customer_id = 1;
 Query OK, 1 row affected (0.00 sec)
 
+#output
+select * from default_setting;
++-------+----------------+----------+-------------+-------------+
+| name  | account_number | acc_type | pan         | customer_id |
++-------+----------------+----------+-------------+-------------+
+| aiza  |           1001 | personal | not updated |           1 |
+| neha  |           1001 | saving   | update      |           2 |
+| apsar |           1001 | saving   | update      |           3 |
++-------+----------------+----------+-------------+-------------+
+3 rows in set (0.00 sec)
+
