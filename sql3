@@ -1,0 +1,61 @@
+#employee table and information 
+
+ 
+mysql> CREATE TABLE employee_details (
+    ->     name varchar(40),
+    ->     age int,
+    ->     dep_name varchar(30),
+    ->     emp_id int primary key AUTO_INCREMENT,
+    ->     account_no int,
+    ->     address varchar(30),  -- Corrected column name from 'adress' to 'address'
+    ->     acc_type varchar(10) default 'saving'
+    -> );
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> insert into employee_details values('neha',22,'HR',null,101,'banglore',null);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from employee_details;
++------+------+----------+--------+------------+----------+----------+
+| name | age  | dep_name | emp_id | account_no | address  | acc_type |
++------+------+----------+--------+------------+----------+----------+
+| neha |   22 | HR       |      1 |        101 | banglore | NULL     |
++------+------+----------+--------+------------+----------+----------+
+1 row in set (0.00 sec)
+
+nsert employee_details(name,age,dep_name,account_no,address) values('adnan',23,'civil',103,'chennai');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from employee_details;
++-------+------+----------+--------+------------+----------+----------+
+| name  | age  | dep_name | emp_id | account_no | address  | acc_type |
++-------+------+----------+--------+------------+----------+----------+
+| neha  |   22 | HR       |      1 |        101 | banglore | saving   |
+| aiza  |    5 | finance  |      2 |        102 | chennai  | saving   |
+| adnan |   23 | civil    |      3 |        103 | chennai  | saving   |
++-------+------+----------+--------+------------+----------+----------+
+3 rows in set (0.00 sec)
+
+
+#alis key word 
+select name AS' EMP NAME' FROM employee_details;;
++----------+
+| EMP NAME |
++----------+
+| neha     |
+| aiza     |
+| adnan    |
++----------+
+3 rows in set, 1 warning (0.00 sec)
+
+
+select emp_id AS 'EMPLOYEE ID',address as 'EMPLOYEE ADDRESS' from employee_details;
++-------------+------------------+
+| EMPLOYEE ID | EMPLOYEE ADDRESS |
++-------------+------------------+
+|           1 | banglore         |
+|           2 | chennai          |
+|           3 | chennai          |
++-------------+------------------+
+3 rows in set (0.00 sec)
+
