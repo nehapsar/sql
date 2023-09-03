@@ -1,0 +1,68 @@
+select concat_ws(':',name,age) from employee_details;
++-------------------------+
+| concat_ws(':',name,age) |
++-------------------------+
+| neha:22                 |
+| aiza:5                  |
+| adnan:23                |
+| apsar:33                |
+| zaheer:23               |
+| ammi:45                 |
+| abbu:65                 |
++-------------------------+
+7 rows in set (0.00 sec)
+mysql> select substring(name ,2,4) from  employee_details;
++----------------------+
+| substring(name ,2,4) |
++----------------------+
+| eha                  |
+| iza                  |
+| dnan                 |
+| psar                 |
+| ahee                 |
+| mmi                  |
+| bbu                  |
++----------------------+
+7 rows in set (0.00 sec)
+
+mysql> select substring(name,1,4) from  employee_details;
++---------------------+
+| substring(name,1,4) |
++---------------------+
+| neha                |
+| aiza                |
+| adna                |
+| apsa                |
+| zahe                |
+| ammi                |
+| abbu                |
++---------------------+
+7 rows in set (0.00 sec)
+
+mysql> select substring(name,1) from  employee_details;
++-------------------+
+| substring(name,1) |
++-------------------+
+| neha              |
+| aiza              |
+| adnan             |
+| apsar             |
+| zaheer            |
+| ammi              |
+| abbu              |
++-------------------+
+7 rows in set (0.00 sec)
+
+mysql> select substring(name,1) from  employee_details;
++-------------------+
+| substring(name,1) |
++-------------------+
+| neha              |
+| aiza              |
+| adnan             |
+| apsar             |
+| zaheer            |
+| ammi              |
+| abbu              |
++-------------------+
+7 rows in set (0.00 sec)
